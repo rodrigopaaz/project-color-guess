@@ -5,6 +5,7 @@ let div4 = document.getElementsByTagName('div')[3]
 let div5 = document.getElementsByTagName('div')[4]
 let div6 = document.getElementsByTagName('div')[5]
 let textColor = document.getElementsByTagName('p')[0]
+let answer = document.getElementById('answer')
    
 
   let color1 = function corAleatoria1() {
@@ -12,7 +13,6 @@ let textColor = document.getElementsByTagName('p')[0]
   let g = Math.random() * 255;
   let b = Math.random() * 255;
   div1.style.background = `rgba(${r}, ${g}, ${b})`;
-  console.log(div1.style.background);
 
    }
 color1();
@@ -59,10 +59,87 @@ let color6 = function corAleatoria6() {
      }
      color6();
  
-     function colorText(){
-        textColor.innerHTML= div1.style.background
-     }
+     sessionStorage.setItem('certo', (Math.random()*6))
 
-     textColor.innerHTML = div1.style.background  
+     let ramdom = function colorText(){
+        
+        let test = Math.floor(Math.random() * 6);
+        aleatorio = document.getElementsByClassName('ball')[test]
+        textColor.innerHTML= aleatorio.style.background
+        
+    }
+      ramdom() 
+
+      div1.addEventListener('click', function (object) {
+       let select = object.target.style.background
+       if (select === textColor.innerHTML) {
+        answer.innerHTML= 'Acertou!'
+        sessionStorage.setItem('resultado','acertou')}
+        else {
+            answer.innerHTML= 'Errou! Tente novamente!!'
+            sessionStorage.setItem('resultado','errou')
+            
+        }
+       })
+       div2.addEventListener('click', function (object) {
+        let select = object.target.style.background
+        if (select === textColor.innerHTML) {
+            answer.innerHTML= 'Acertou!'
+            sessionStorage.setItem('resultado','acertou')}
+            else {
+                answer.innerHTML= 'Errou! Tente novamente!!'
+                sessionStorage.setItem('resultado','errou')
+                
+            }
+           })
+        div3.addEventListener('click', function (object) {
+            let select = object.target.style.background
+            if (select === textColor.innerHTML) {
+                answer.innerHTML= 'Acertou!'
+                sessionStorage.setItem('resultado','acertou')}
+                else {
+                    answer.innerHTML= 'Errou! Tente novamente!!'
+                    sessionStorage.setItem('resultado','errou')
+                    
+                }
+               })
+            div4.addEventListener('click', function (object) {
+                let select = object.target.style.background
+                if (select === textColor.innerHTML) {
+                    answer.innerHTML= 'Acertou!'
+                    sessionStorage.setItem('resultado','acertou')}
+                    else {
+                        answer.innerHTML= 'Errou! Tente novamente!!'
+                        sessionStorage.setItem('resultado','errou')
+                        
+                    }
+                   })
+                div5.addEventListener('click', function (object) {
+                    let select = object.target.style.background
+                    if (select === textColor.innerHTML) {
+                        answer.innerHTML= 'Acertou!'
+                        sessionStorage.setItem('resultado','acertou')}
+                        else {
+                            answer.innerHTML= 'Errou! Tente novamente!!'
+                            sessionStorage.setItem('resultado','errou')
+                            
+                        }
+                       })
+                    div6.addEventListener('click', function (object) {
+                        let select = object.target.style.background
+                        if (select === textColor.innerHTML) {
+                            answer.innerHTML= 'Acertou!'
+                            sessionStorage.setItem('resultado','acertou')}
+                            else {
+                                answer.innerHTML= 'Errou! Tente novamente!!'
+                                sessionStorage.setItem('resultado','errou')
+                                
+                            }
+                           })
+
+
+      
+    
+
 
    
